@@ -3,24 +3,40 @@
 <div class="container">
     <div>
         <a asp-action="Update" asp-controller="Galeri" class="btn btn-primary mb-3">
-			Add New Image
-		</a>
+            Add New Image
+        </a>
     </div>
-    <div class="row">
 
-        @foreach (var image in Model)
-        {
-            <div class="col-md-3 mb-4 img-box">
-                <div class="card">
-                    <img
-                        src="/images/@image"
-                        class="card-img-top"
-                        style="height:250px; object-fit:cover;"
-                    />
-                </div>
+    @if (Model == null || !Model.Any())
+    {
+        <div class="d-flex flex-column align-items-center justify-content-center text-center py-5 my-4">
+            <div class="mb-3" style="font-size: 3rem; color: #d0d7de;">
+                <i class="bi bi-images"></i>
             </div>
-        }
-
-    </div>
-</div> 
-
+            <h5 class="fw-semibold text-secondary mb-1">No images</h5>
+            <p class="text-muted mb-3" style="font-size: 14px;">
+                Upload your first image to see it appear here.
+            </p>
+            <a asp-action="Update" asp-controller="Galeri" class="btn btn-outline-primary btn-sm">
+                Upload Image
+            </a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var image in Model)
+            {
+                <div class="col-md-3 mb-4 img-box">
+                    <div class="card">
+                        <a href="/images/@image" target="_blank">
+                            <img src="/images/@image"
+                                 class="card-img-top"
+                                 style="height:250px; object-fit:cover;" />
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

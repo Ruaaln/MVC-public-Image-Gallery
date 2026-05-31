@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Documents\\ASP_projekts\\DOCKER-HW3\\ImageUpdateAPP\\ImageUpdateAPP.csproj": {}
+    "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\ImageUpdateAPP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Documents\\ASP_projekts\\DOCKER-HW3\\ImageUpdateAPP\\ImageUpdateAPP.csproj": {
+    "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\ImageUpdateAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Documents\\ASP_projekts\\DOCKER-HW3\\ImageUpdateAPP\\ImageUpdateAPP.csproj",
+        "projectUniqueName": "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\ImageUpdateAPP.csproj",
         "projectName": "ImageUpdateAPP",
-        "projectPath": "C:\\Users\\USER\\Documents\\ASP_projekts\\DOCKER-HW3\\ImageUpdateAPP\\ImageUpdateAPP.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Documents\\ASP_projekts\\DOCKER-HW3\\ImageUpdateAPP\\obj\\",
+        "projectPath": "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\ImageUpdateAPP.csproj",
+        "packagesPath": "C:\\Users\\srifo_rr01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\srifo_rr01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

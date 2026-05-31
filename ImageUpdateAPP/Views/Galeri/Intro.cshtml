@@ -1,120 +1,166 @@
-﻿@{
+@{
     ViewData["Title"] = "Intro";
 }
 
-<div class="container py-5">
+<link rel="stylesheet" href="~/css/docs.css" />
 
-    <h1 class="mb-5 text-center fw-bold">
-        Image Upload MVC Project
-    </h1>
+<div class="docs-page">
+  <div class="docs-inner">
 
-    <div class="card shadow border-0 mb-5">
-        <div class="card-body">
+    <div class="docs-hero">
+      <div class="docs-badge">
+        <span class="docs-badge-dot"></span>
+        ASP.NET Core MVC
+      </div>
+      <h1>Image Upload<br><em>Documentation</em></h1>
+      <p>Controller actions, service methods, and container configuration for persistent image management.</p>
+    </div>
 
-            <h3 class="fw-bold mb-3">
-                IActionResult Index()
-            </h3>
+    <nav class="docs-toc" id="tocNav">
+      <a href="#s-index"><span class="toc-num">01</span> Gallery Index Action</a>
+      <a href="#s-save"><span class="toc-num">02</span> Image Save Service</a>
+      <a href="#s-docker"><span class="toc-num">03</span> Docker Volume Config</a>
+    </nav>
 
-            <p class="text-muted">
-                This action returns all uploaded images and displays them inside gallery container.
-            </p>
-
-            <div class="bg-dark text-light rounded p-3 position-relative">
-
-                <span class="position-absolute top-0 end-0 badge bg-primary m-2">
-                    C#
-                </span>
-
-<pre class="m-0"><code>
-public IActionResult Index()
+    <!-- 01 -->
+    <div class="docs-section" id="s-index">
+      <div class="docs-section-header">
+        <span class="docs-section-num">01</span>
+        <div>
+          <div class="docs-section-title">Gallery Index Action</div>
+          <p class="docs-section-desc">
+            Controller action that retrieves all uploaded images and passes them to the gallery view.
+          </p>
+        </div>
+      </div>
+      <div class="docs-code-block">
+        <div class="docs-code-header">
+          <div class="docs-code-dots">
+            <span class="doc-dot-r"></span>
+            <span class="doc-dot-y"></span>
+            <span class="doc-dot-g"></span>
+          </div>
+          <span class="docs-code-lang">C# &middot; HomeController.cs</span>
+          <button class="docs-code-copy" onclick="docsCopy(this,'c1')">copy</button>
+        </div>
+        <pre><code id="c1"><span class="syn-kw">public</span> <span class="syn-type">IActionResult</span> <span class="syn-fn">Index</span>()
 {
-    var images = _fileService.GetAllImages();
+    <span class="syn-kw">var</span> <span class="syn-prop">images</span> = <span class="syn-prop">_fileService</span>.<span class="syn-fn">GetAllImages</span>();
 
-    return View(images);
-}
-</code></pre>
-
-            </div>
-
-        </div>
+    <span class="syn-kw">return</span> <span class="syn-fn">View</span>(<span class="syn-prop">images</span>);
+}</code></pre>
+      </div>
     </div>
 
-    <div class="card shadow border-0 mb-5">
-        <div class="card-body">
+    <div class="docs-divider"></div>
 
-            <h3 class="fw-bold mb-3">
-                SaveImageAsync()
-            </h3>
-
-            <p class="text-muted">
-                This method uploads image files into wwwroot/images folder.
-            </p>
-
-            <div class="bg-dark text-light rounded p-3 position-relative">
-
-                <span class="position-absolute top-0 end-0 badge bg-success m-2">
-                    C#
-                </span>
-
-<pre class="m-0"><code>
-public async Task&lt;string&gt; SaveImageAsync(IFormFile file)
+    <!-- 02 -->
+    <div class="docs-section" id="s-save">
+      <div class="docs-section-header">
+        <span class="docs-section-num">02</span>
+        <div>
+          <div class="docs-section-title">Image Save Service</div>
+          <p class="docs-section-desc">
+            Async service method that generates a unique filename, creates the upload directory if needed,
+            and writes the file stream to disk.
+          </p>
+        </div>
+      </div>
+      <div class="docs-code-block">
+        <div class="docs-code-header">
+          <div class="docs-code-dots">
+            <span class="doc-dot-r"></span>
+            <span class="doc-dot-y"></span>
+            <span class="doc-dot-g"></span>
+          </div>
+          <span class="docs-code-lang">C# &middot; FileService.cs</span>
+          <button class="docs-code-copy" onclick="docsCopy(this,'c2')">copy</button>
+        </div>
+        <pre><code id="c2"><span class="syn-kw">public</span> <span class="syn-kw">async</span> <span class="syn-type">Task</span>&lt;<span class="syn-type">string</span>&gt; <span class="syn-fn">SaveImageAsync</span>(<span class="syn-cls">IFormFile</span> <span class="syn-prop">file</span>)
 {
-    var uploadsFolder = Path.Combine(
-        _environment.WebRootPath,
-        "images"
+    <span class="syn-kw">var</span> <span class="syn-prop">uploadsFolder</span> = <span class="syn-cls">Path</span>.<span class="syn-fn">Combine</span>(
+        <span class="syn-prop">_environment</span>.<span class="syn-prop">WebRootPath</span>,
+        <span class="syn-str">"images"</span>
     );
 
-    Directory.CreateDirectory(uploadsFolder);
+    <span class="syn-cls">Directory</span>.<span class="syn-fn">CreateDirectory</span>(<span class="syn-prop">uploadsFolder</span>);
 
-    var fileName = Guid.NewGuid() +
-                   Path.GetExtension(file.FileName);
+    <span class="syn-kw">var</span> <span class="syn-prop">fileName</span> = <span class="syn-cls">Guid</span>.<span class="syn-fn">NewGuid</span>() +
+                   <span class="syn-cls">Path</span>.<span class="syn-fn">GetExtension</span>(<span class="syn-prop">file</span>.<span class="syn-prop">FileName</span>);
 
-    var filePath = Path.Combine(
-        uploadsFolder,
-        fileName
+    <span class="syn-kw">var</span> <span class="syn-prop">filePath</span> = <span class="syn-cls">Path</span>.<span class="syn-fn">Combine</span>(
+        <span class="syn-prop">uploadsFolder</span>,
+        <span class="syn-prop">fileName</span>
     );
 
-    using var stream = new FileStream(
-        filePath,
-        FileMode.Create
+    <span class="syn-kw">using</span> <span class="syn-kw">var</span> <span class="syn-prop">stream</span> = <span class="syn-kw">new</span> <span class="syn-cls">FileStream</span>(
+        <span class="syn-prop">filePath</span>,
+        <span class="syn-cls">FileMode</span>.<span class="syn-prop">Create</span>
     );
 
-    await file.CopyToAsync(stream);
+    <span class="syn-kw">await</span> <span class="syn-prop">file</span>.<span class="syn-fn">CopyToAsync</span>(<span class="syn-prop">stream</span>);
 
-    return fileName;
-}
-</code></pre>
-
-            </div>
-
-        </div>
+    <span class="syn-kw">return</span> <span class="syn-prop">fileName</span>;
+}</code></pre>
+      </div>
     </div>
 
-    <div class="card shadow border-0 mb-5">
-        <div class="card-body">
+    <div class="docs-divider"></div>
 
-            <h3 class="fw-bold mb-3">
-                Docker Volume
-            </h3>
-
-            <p class="text-muted">
-                Docker volume configuration for persistent image storage.
-            </p>
-
-            <div class="bg-dark text-light rounded p-3 position-relative">
-
-                <span class="position-absolute top-0 end-0 badge bg-warning text-dark m-2">
-                    YAML
-                </span>
-
-<pre class="m-0"><code>
-volumes:
-  - ./wwwroot/images:/app/wwwroot/images
-</code></pre>
-
-            </div>
-
+    <!-- 03 -->
+    <div class="docs-section" id="s-docker">
+      <div class="docs-section-header">
+        <span class="docs-section-num">03</span>
+        <div>
+          <div class="docs-section-title">Docker Volume Config</div>
+          <p class="docs-section-desc">
+            Bind-mount that maps the host images directory into the container,
+            ensuring uploads persist across restarts.
+          </p>
         </div>
+      </div>
+      <div class="docs-code-block">
+        <div class="docs-code-header">
+          <div class="docs-code-dots">
+            <span class="doc-dot-r"></span>
+            <span class="doc-dot-y"></span>
+            <span class="doc-dot-g"></span>
+          </div>
+          <span class="docs-code-lang">YAML &middot; docker-compose.yml</span>
+          <button class="docs-code-copy" onclick="docsCopy(this,'c3')">copy</button>
+        </div>
+        <pre><code id="c3"><span class="syn-yaml-key">volumes</span><span class="syn-yaml-op">:</span>
+  <span class="syn-yaml-op">-</span> <span class="syn-yaml-val">./wwwroot/images:/app/wwwroot/images</span></code></pre>
+      </div>
     </div>
 
+    <div class="docs-footer">Image Upload MVC &middot; ASP.NET Core Documentation</div>
+
+  </div>
 </div>
+
+<script>
+    function docsCopy(btn, id) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'copied!';
+            setTimeout(() => btn.textContent = 'copy', 1800);
+        });
+    }
+
+    const sections = document.querySelectorAll('.docs-section');
+    const links    = document.querySelectorAll('#tocNav a');
+
+    const fadeObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    const activeObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting)
+                links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+        });
+    }, { threshold: 0.5 });
+
+    sections.forEach(s => { fadeObs.observe(s); activeObs.observe(s); });
+</script>
