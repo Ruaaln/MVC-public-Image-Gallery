@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MYkefn53ehk=",
+  "dgSpecHash": "snr4uPfqN9A=",
   "success": true,
   "projectFilePath": "C:\\Users\\srifo_rr01\\Source\\Repos\\MVC-public-Image-Gallery\\ImageUpdateAPP\\ImageUpdateAPP.csproj",
   "expectedPackageFiles": [
@@ -87,6 +87,7 @@
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.net.stringtools\\17.11.48\\microsoft.net.stringtools.17.11.48.nupkg.sha512",
+    "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\8.0.23\\microsoft.visualstudio.web.codegeneration.8.0.23.nupkg.sha512",
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\8.0.23\\microsoft.visualstudio.web.codegeneration.core.8.0.23.nupkg.sha512",
     "C:\\Users\\srifo_rr01\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\8.0.23\\microsoft.visualstudio.web.codegeneration.design.8.0.23.nupkg.sha512",

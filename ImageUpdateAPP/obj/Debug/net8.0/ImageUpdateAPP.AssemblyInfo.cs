@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageUpdateAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73af7ccac0b7bff519957d9d1d3a930235f32df8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+401023e78bb352f534e192de24cc7b9d8b8024a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageUpdateAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageUpdateAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
